@@ -26,7 +26,7 @@ public class Buyer {
     @Column
     private LocalDate birth_date;
     @OneToMany(mappedBy = "buyer")
-    private List<Order> orders;
+    private List<ShopOrder> shopOrders;
 
 
     @Override

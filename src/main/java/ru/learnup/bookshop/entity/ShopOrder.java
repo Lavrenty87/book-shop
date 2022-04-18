@@ -13,7 +13,7 @@ import java.util.Objects;
 @Setter
 @ToString()
 @RequiredArgsConstructor
-public class Order {
+public class ShopOrder {
 
     @Id
     @GeneratedValue
@@ -33,8 +33,8 @@ public class Order {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || Hibernate.getClass(this) != Hibernate.getClass(o)) return false;
-        Order order = (Order) o;
-        return id != null && Objects.equals(id, order.id);
+        ShopOrder shopOrder = (ShopOrder) o;
+        return id != null && Objects.equals(id, shopOrder.id);
     }
 
     @Override

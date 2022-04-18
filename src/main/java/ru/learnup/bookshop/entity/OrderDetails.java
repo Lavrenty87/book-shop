@@ -7,7 +7,6 @@ import javax.persistence.*;
 import java.util.Objects;
 
 @Entity
-@Table(name = "order_details")
 @Getter
 @Setter
 @ToString
