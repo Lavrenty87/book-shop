@@ -13,7 +13,7 @@ import java.util.Objects;
 @RequiredArgsConstructor
 public class OrderDetails {
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     @ManyToOne
     private OrderDetails order_details;

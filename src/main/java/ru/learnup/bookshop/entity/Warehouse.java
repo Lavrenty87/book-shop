@@ -13,7 +13,7 @@ import java.util.Objects;
 @RequiredArgsConstructor
 public class Warehouse {
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     @OneToOne
     private Book book;

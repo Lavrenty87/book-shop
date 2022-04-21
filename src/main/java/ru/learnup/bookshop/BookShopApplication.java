@@ -5,6 +5,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ConfigurableApplicationContext;
+import org.springframework.jdbc.core.JdbcTemplate;
 
 @SpringBootApplication
 public class BookShopApplication {
@@ -12,6 +13,7 @@ public class BookShopApplication {
     private static final Logger log = LoggerFactory.getLogger(BookShopApplication.class);
     public static void main(String[] args) {
         ConfigurableApplicationContext context = SpringApplication.run(BookShopApplication.class, args);
+        JdbcTemplate template;
        /* AuthorDao authorDao = context.getBean(AuthorDao.class);
 
         Author author = authorDao.findById(1);

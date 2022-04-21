@@ -19,7 +19,7 @@ import java.util.Objects;
 @RequiredArgsConstructor
 public class Buyer {
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     @Column
     private String FIO;
