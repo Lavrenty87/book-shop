@@ -5,7 +5,11 @@ import org.slf4j.LoggerFactory;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ConfigurableApplicationContext;
-import org.springframework.jdbc.core.JdbcTemplate;
+import ru.learnup.bookshop.entity.Author;
+import ru.learnup.bookshop.entity.service.AuthorService;
+import ru.learnup.bookshop.entity.service.BookService;
+
+import java.time.LocalDate;
 
 @SpringBootApplication
 public class BookShopApplication {
@@ -13,7 +17,12 @@ public class BookShopApplication {
     private static final Logger log = LoggerFactory.getLogger(BookShopApplication.class);
     public static void main(String[] args) {
         ConfigurableApplicationContext context = SpringApplication.run(BookShopApplication.class, args);
-        JdbcTemplate template;
+
+        AuthorService authorService = context.getBean(AuthorService.class);
+        Author author = new Author("Fio2Create", context.getBean(BookService.class).getBookById(1L),
+                LocalDate.of(2005,04,04));
+        authorService.createAuthor(author);
+        log.info("Author - {}", context.getBean(AuthorService.class).getAuthors());
        /* AuthorDao authorDao = context.getBean(AuthorDao.class);
 
         Author author = authorDao.findById(1);

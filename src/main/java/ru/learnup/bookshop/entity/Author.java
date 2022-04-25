@@ -13,12 +13,17 @@ import java.time.LocalDate;
 import java.util.Objects;
 
 @Entity
-@Table
 @Getter
 @Setter
 @ToString
 @RequiredArgsConstructor
 public class Author {
+
+    public Author(String FIO, Book book, LocalDate birth_date) {
+        this.FIO = FIO;
+        this.book = book;
+        this.birth_date = birth_date;
+    }
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
