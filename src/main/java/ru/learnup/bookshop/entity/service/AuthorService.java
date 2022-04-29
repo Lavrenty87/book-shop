@@ -5,6 +5,7 @@ import ru.learnup.bookshop.entity.Author;
 import ru.learnup.bookshop.entity.repository.AuthorRepository;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class AuthorService {
@@ -24,5 +25,8 @@ public class AuthorService {
 
     public Author getAuthorById(Long id){
         return repository.getById(id);
+    }
+    public Optional<Author> getAuthor(Long id){
+        return repository.findById(id);
     }
 }

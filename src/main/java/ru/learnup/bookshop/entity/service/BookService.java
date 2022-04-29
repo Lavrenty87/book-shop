@@ -5,6 +5,7 @@ import ru.learnup.bookshop.entity.Book;
 import ru.learnup.bookshop.entity.repository.BookRepository;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class BookService {
@@ -24,6 +25,10 @@ public class BookService {
 
     public Book getBookById(Long id){
         return repository.getById(id);
+    }
+
+    public Optional<Book> getBook(Long id) {
+        return repository.findById(id);
     }
 
 }

@@ -5,25 +5,19 @@ import lombok.RequiredArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
 import org.hibernate.Hibernate;
-import org.hibernate.annotations.Fetch;
-import org.hibernate.annotations.FetchMode;
 
 import javax.persistence.*;
 import java.time.LocalDate;
+import java.util.List;
 import java.util.Objects;
 
 @Entity
+@Table
 @Getter
 @Setter
 @ToString
 @RequiredArgsConstructor
 public class Author {
-
-    public Author(String FIO, Book book, LocalDate birth_date) {
-        this.FIO = FIO;
-        this.book = book;
-        this.birth_date = birth_date;
-    }
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -32,10 +26,11 @@ public class Author {
     @Column
     private String FIO;
 
-    @ManyToOne
-    @JoinColumn
-    @Fetch(FetchMode.JOIN)
-    private Book book;
+    @ManyToMany(fetch = FetchType.EAGER)
+    @JoinTable(name = "author_book",
+            joinColumns = @JoinColumn(name = "author_id"),
+            inverseJoinColumns = @JoinColumn(name = "book_id"))
+    private List<Book> book;
 
     @Column
     private LocalDate birth_date;

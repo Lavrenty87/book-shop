@@ -23,7 +23,10 @@ public class Book {
     @Column
     private String book_name;
 
-    @OneToMany(mappedBy = "book",fetch = FetchType.EAGER, cascade = CascadeType.MERGE)
+    @ManyToMany(fetch = FetchType.LAZY)
+    @JoinTable(name = "author_book",
+            joinColumns = @JoinColumn(name = "book_id"),
+            inverseJoinColumns = @JoinColumn(name = "author_id"))
     @ToString.Exclude
     private List<Author> author;
 

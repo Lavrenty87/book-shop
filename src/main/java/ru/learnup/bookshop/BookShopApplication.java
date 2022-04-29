@@ -6,10 +6,11 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ConfigurableApplicationContext;
 import ru.learnup.bookshop.entity.Author;
+import ru.learnup.bookshop.entity.Book;
 import ru.learnup.bookshop.entity.service.AuthorService;
 import ru.learnup.bookshop.entity.service.BookService;
 
-import java.time.LocalDate;
+import java.util.Optional;
 
 @SpringBootApplication
 public class BookShopApplication {
@@ -18,11 +19,17 @@ public class BookShopApplication {
     public static void main(String[] args) {
         ConfigurableApplicationContext context = SpringApplication.run(BookShopApplication.class, args);
 
-        AuthorService authorService = context.getBean(AuthorService.class);
-        Author author = new Author("Fio2Create", context.getBean(BookService.class).getBookById(1L),
-                LocalDate.of(2005,04,04));
-        authorService.createAuthor(author);
-        log.info("Author - {}", context.getBean(AuthorService.class).getAuthors());
+
+        //Author author = context.getBean(AuthorService.class).getAuthorById(4L);
+        Optional<Author> author = context.getBean(AuthorService.class).getAuthor(4L);
+        log.info("author {}",author);
+
+       // Book book = context.getBean(BookService.class).getBookById(2L);
+        Optional<Book> book = context.getBean(BookService.class).getBook(2L);
+        log.info("Book - {}", book);
+
+
+      //  log.info("Author - {}", context.getBean(AuthorService.class).getAuthorById(3L));
        /* AuthorDao authorDao = context.getBean(AuthorDao.class);
 
         Author author = authorDao.findById(1);
