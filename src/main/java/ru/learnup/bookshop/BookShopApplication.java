@@ -20,13 +20,14 @@ public class BookShopApplication {
         ConfigurableApplicationContext context = SpringApplication.run(BookShopApplication.class, args);
 
 
-        //Author author = context.getBean(AuthorService.class).getAuthorById(4L);
-        Optional<Author> author = context.getBean(AuthorService.class).getAuthor(4L);
+        Author author = context.getBean(AuthorService.class).getAuthorById(4L);
+       // Optional<Author> author = context.getBean(AuthorService.class).getAuthor(4L);
         log.info("author {}",author);
 
        // Book book = context.getBean(BookService.class).getBookById(2L);
         Optional<Book> book = context.getBean(BookService.class).getBook(2L);
         log.info("Book - {}", book);
+        log.info("book with author id - {}",  context.getBean(BookService.class).findAllBookByAuthor(3L));
 
 
       //  log.info("Author - {}", context.getBean(AuthorService.class).getAuthorById(3L));

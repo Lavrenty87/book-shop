@@ -31,4 +31,8 @@ public class BookService {
         return repository.findById(id);
     }
 
+    public List<Book> findAllBookByAuthor(Long id){
+        return repository.findAllBookByAuthor(id);
+    }
+
 }
