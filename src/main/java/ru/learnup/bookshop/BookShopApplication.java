@@ -29,7 +29,6 @@ public class BookShopApplication {
         log.info("Book - {}", book);
         log.info("book with author id - {}",  context.getBean(BookService.class).findAllBookByAuthor(3L));
 
-
       //  log.info("Author - {}", context.getBean(AuthorService.class).getAuthorById(3L));
        /* AuthorDao authorDao = context.getBean(AuthorDao.class);
 

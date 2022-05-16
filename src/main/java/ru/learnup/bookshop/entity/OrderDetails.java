@@ -16,7 +16,7 @@ public class OrderDetails {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     @ManyToOne
-    private OrderDetails order_details;
+    private ShopOrder shop_order;
     @OneToOne
     private Book book;
     @Column

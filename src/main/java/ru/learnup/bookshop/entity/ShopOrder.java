@@ -19,13 +19,13 @@ import java.util.Objects;
 public class ShopOrder {
 
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     @ManyToOne
     private Buyer buyer;
 
-    @OneToMany(mappedBy = "order_details")
+    @OneToMany(mappedBy = "shop_order")
     @ToString.Exclude
     private List<OrderDetails> order_details;
 

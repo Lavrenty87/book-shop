@@ -1,9 +1,14 @@
 package ru.learnup.bookshop.entity;
 
-import lombok.*;
+import lombok.Getter;
+import lombok.RequiredArgsConstructor;
+import lombok.Setter;
+import lombok.ToString;
 import org.hibernate.Hibernate;
 
 import javax.persistence.*;
+import javax.validation.Valid;
+import javax.validation.constraints.NotBlank;
 import java.util.Objects;
 
 @Entity
@@ -19,6 +24,10 @@ public class Warehouse {
     private Book book;
     @Column
     private Integer count;
+    @Version
+    @Valid
+    @NotBlank
+    private Long version;
 
     @Override
     public boolean equals(Object o) {
