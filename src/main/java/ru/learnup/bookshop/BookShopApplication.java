@@ -5,12 +5,6 @@ import org.slf4j.LoggerFactory;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ConfigurableApplicationContext;
-import ru.learnup.bookshop.entity.Author;
-import ru.learnup.bookshop.entity.Book;
-import ru.learnup.bookshop.entity.service.AuthorService;
-import ru.learnup.bookshop.entity.service.BookService;
-
-import java.util.Optional;
 
 @SpringBootApplication
 public class BookShopApplication {
@@ -20,7 +14,7 @@ public class BookShopApplication {
         ConfigurableApplicationContext context = SpringApplication.run(BookShopApplication.class, args);
 
 
-        Author author = context.getBean(AuthorService.class).getAuthorById(4L);
+      /*  Author author = context.getBean(AuthorService.class).getAuthorById(4L);
        // Optional<Author> author = context.getBean(AuthorService.class).getAuthor(4L);
         log.info("author {}",author);
 
