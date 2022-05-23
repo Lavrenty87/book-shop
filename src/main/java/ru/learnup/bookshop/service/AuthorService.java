@@ -1,8 +1,8 @@
-package ru.learnup.bookshop.entity.service;
+package ru.learnup.bookshop.service;
 
 import org.springframework.stereotype.Service;
 import ru.learnup.bookshop.entity.Author;
-import ru.learnup.bookshop.entity.repository.AuthorRepository;
+import ru.learnup.bookshop.repository.AuthorRepository;
 
 import java.util.List;
 import java.util.Optional;

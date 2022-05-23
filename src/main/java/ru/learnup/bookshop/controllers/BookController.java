@@ -8,8 +8,8 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import ru.learnup.bookshop.entity.Book;
-import ru.learnup.bookshop.entity.repository.BookRepository;
-import ru.learnup.bookshop.entity.service.BookService;
+import ru.learnup.bookshop.repository.BookRepository;
+import ru.learnup.bookshop.service.BookService;
 
 import java.util.List;
 
@@ -35,13 +35,6 @@ public class BookController {
     public String books(Model model) {
 
         List<Book> books = new BookService(repository).getBooks();
-               /* .count(1L)
-                .description("Olol")
-                .name("Book")
-                .price(100L)
-                .imageUrl("https://img2.freepng.ru/20180417/zjw/kisspng-computer-icons-literature-book-clip-art-column-5ad5a011d369f9.580985541523949585866.jpg")
-                .build();*/
-
         model.addAttribute(
                 "books", books);
 

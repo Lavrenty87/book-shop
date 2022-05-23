@@ -1,8 +1,8 @@
-package ru.learnup.bookshop.entity.service;
+package ru.learnup.bookshop.service;
 
 import org.springframework.stereotype.Service;
 import ru.learnup.bookshop.entity.Book;
-import ru.learnup.bookshop.entity.repository.BookRepository;
+import ru.learnup.bookshop.repository.BookRepository;
 
 import java.util.List;
 import java.util.Optional;
@@ -21,6 +21,10 @@ public class BookService {
 
     public List<Book> getBooks() {
         return repository.findAll();
+    }
+
+    public List<Book> getBookByFilter(BookFilter bookFilter){
+        return repository.findAllByBook_nameContainsAndPriseContains(bookFilter.getName(), bookFilter.getPrise());
     }
 
     public Book getBookById(Long id){
