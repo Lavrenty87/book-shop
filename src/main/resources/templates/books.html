@@ -35,15 +35,15 @@
         </thead>
         <tbody>
         <tr class="thead-light" th:each="book, stat : ${books}">
-            <td th:text="${stat.index+1}"></td>
+            <td th:text="${book.id}"></td>
             <td>
                 
-                <img th:src="@{${book.getImageUrl()}}"
+                <img th:href="@{/icon.png}"
                      class="card img-fluid" style="width:50px; height: 50px;" alt="" src=""/>
             </td>
-            <td th:text="${book.getName()}"></td>
-            <td th:text="${book.getPrice()}"></td>
-            <td th:text="${book.getCount()}"></td>
+            <td th:text="${book.getBook_name()}"></td>
+            <td th:text="${book.getPrise()}"></td>
+            <td th:text="${book.getPage_count()}"></td>
 
         </tr>
         </tbody>
