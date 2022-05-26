@@ -1,27 +1,22 @@
 package ru.learnup.bookshop;
 
-import com.google.gson.Gson;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.context.ConfigurableApplicationContext;
-import ru.learnup.bookshop.entity.Book;
 
 @SpringBootApplication
 public class BookShopApplication {
 
-    private static final Logger log = LoggerFactory.getLogger(BookShopApplication.class);
+//    private static final Logger log = LoggerFactory.getLogger(BookShopApplication.class);
     public static void main(String[] args) {
-        ConfigurableApplicationContext context = SpringApplication.run(BookShopApplication.class, args);
+        SpringApplication.run(BookShopApplication.class, args);
 
-        Gson gson =new Gson();
-        Book book = new Book();
-
-        String json = gson.toJson(book);
-        log.info("json book {}", json);
-        Book serBook = gson.fromJson(json, Book.class);
-        log.info("book is gson {}", serBook );
+//        Gson gson =new Gson();
+//        Book book = new Book();
+//
+//        String json = gson.toJson(book);
+//        log.info("json book {}", json);
+//        Book serBook = gson.fromJson(json, Book.class);
+//        log.info("book is gson {}", serBook );
 
 
       /*  Author author = context.getBean(AuthorService.class).getAuthorById(4L);

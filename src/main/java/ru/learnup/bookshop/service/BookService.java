@@ -11,6 +11,7 @@ import java.util.Optional;
 public class BookService {
     private final BookRepository repository;
 
+
     public BookService(BookRepository repository) {
         this.repository = repository;
     }
@@ -23,9 +24,9 @@ public class BookService {
         return repository.findAll();
     }
 
-    public List<Book> getBookByFilter(BookFilter bookFilter){
-        return repository.findAllByBook_nameContainsAndPriseContains(bookFilter.getName(), bookFilter.getPrise());
-    }
+//    public List<Book> getBookByFilter(BookFilter bookFilter){
+//        return repository.findAllByBook_nameContainsAndPriseContains(bookFilter.getName(), bookFilter.getPrise());
+//    }
 
     public Book getBookById(Long id){
         return repository.getById(id);

@@ -15,5 +15,5 @@ public interface BookRepository extends JpaRepository<Book, Long> {
 
 
 
-    List<Book> findAllByBook_nameContainsAndPriseContains(String name, Integer prise);
+    //List<Book> findAllByBook_nameContainsAndPriseContains(String name, Integer prise);
 }

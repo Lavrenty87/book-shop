@@ -12,6 +12,7 @@ import javax.validation.constraints.NotBlank;
 import java.util.Objects;
 
 @Entity
+@Table
 @Getter
 @Setter
 @ToString
