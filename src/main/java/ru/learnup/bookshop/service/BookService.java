@@ -11,10 +11,13 @@ import java.util.Optional;
 public class BookService {
     private final BookRepository repository;
 
-
     public BookService(BookRepository repository) {
         this.repository = repository;
     }
+
+   /* public Book getBook(String name){
+        return repository.findBookByBook_name(name);
+    }*/
 
     public Book createBook(Book book){
         return repository.save(book);

@@ -13,7 +13,7 @@ public interface BookRepository extends JpaRepository<Book, Long> {
     @Query(value = "select * from book join author_book ab on book.id = ab.book_id where author_id = ?1", nativeQuery = true)
     List<Book> findAllBookByAuthor(Long id);
 
-
+   // Book findBookByBook_name(String name);
 
     //List<Book> findAllByBook_nameContainsAndPriseContains(String name, Integer prise);
 }

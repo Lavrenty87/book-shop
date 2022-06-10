@@ -13,7 +13,6 @@ import ru.learnup.bookshop.service.BookService;
 
 import java.util.List;
 
-
 @Controller
 @Slf4j
 @RequestMapping("/bookController")
